@@ -193,63 +193,51 @@ fclose(f);
 clear
 close all
 clc
-% âû÷èñëåíèå
-tic %âêëþ÷èòü òàéìåð
-%óêàçàòü ïàïêó, ãäå ñîõðàíÿòü ðèñóíêè è html-ôàéë
+tic 
 File1NameExp='v01';
-PictHigh1='200'; %âûñîòà ðèñóíêà íà html-ñòðàíèöå 8
-DirName1=['C:\Users\User\Desktop\Ëàáû è ðàñ÷åòû\' File1NameExp];
- %create new folder for äàííûõ
-if ~exist(DirName1)
+PictHigh1='200'; 
+DirName1=['C:\Users\User\Desktop\Лабы и расчеты\'File1NameExp];
+ if ~exist(DirName1)
  mkdir(DirName1);
 end;
 cd(DirName1);
-%îòêðûòü html-ôàéë äëÿ ñîçäàíèÿ îò÷åòà
-FileHtml=fopen(['00' File1NameExp 'lab3_15(5).htm'],'wt');
- %Çàãîëîâîê html-ôàéëà
+ FileHtml=fopen(['00' File1NameExp 'lab3_15(5).htm'],'wt');
  fprintf(FileHtml,['<HTML>\n']);
  fprintf(FileHtml,['<head>\n']);
- fprintf(FileHtml,['<title>Îò÷åò ïî ëàáîðàòîðíîé ðàáîòå \n']);
+ fprintf(FileHtml,['C:\Users\User\Desktop\Лабы и расчеты\']);
  fprintf(FileHtml,['</title>\n']);
  fprintf(FileHtml,['<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows">\n']);
  fprintf(FileHtml,['</head>\n']);
  fprintf(FileHtml,['<body>\n']);
 
- fprintf(FileHtml,['<center><H3>ÎÒ×ÅÒ<br>ïî ëàáîðàòîðíîé ðàáîòå ¹4</h3></center>\n']);
-  fprintf(FileHtml,['<center><H3>Ìàâðèíîé Ñâåòëàíû Ñåðãååâíû</h3></center>\n']);
-% ëèñòèíã ïðîãðàììû èëè äðóãàÿ èíôîðìàöèÿ
+ fprintf(FileHtml,['<center><H3>ОТЧЕТ<br>по лабораторной работе №4</h3></center>\n']);
+  fprintf(FileHtml,['<center><H3>Мавриной Светланы Сергеевны</h3></center>\n']);
  n1=1;
  n2=5;
- fprintf(FileHtml,['<h3>Èñõîäíûå äàííûå</h3>\n']);
- fprintf(FileHtml,'<br>Âàðèàíò:  %-5.0f%-5.0f\n',n1,n2);
-% ëèñòèíã ïðîãðàììû èëè äðóãàÿ èíôîðìàöèÿ
-% ñîçäàòü ãðàôè÷åñêîå îêíî
-h1=figure('Name','Ìîäåëüíîå èçîáðàæåíèå (èñõîäíîå Image0)im3d');
+ fprintf(FileHtml,['<h3>Исходные данные</h3>\n']);
+ fprintf(FileHtml,'<br>Вариант:  %-5.0f%-5.0f\n',n1,n2);
+h1=figure('Name','Модельное изображение (исходное Image0)im3d');
 hold on
-%âûïîëíèòü ðàñ÷åòû
 x=[1:0.1:5];
 y=sin(x*15);
 plot(x,y)
 hold off
-%ñîõðàíèòü ïîñòðîåííûå ãðàôèêè â ôàéë
 FileName000=[File1NameExp 'var15(5).jpg'];
 saveas(h1,FileName000);
-% ïîëó÷åííûé ãðàôè÷åñêèé ôàéë íåîáõîäèìî ðàçìåñòèòü íà htmlñòðàíèöå 9
- %ñîçäàåòñÿ html-ôàéë
- fprintf(FileHtml,['<br><br> Ãðàôèêè \n']);
+ fprintf(FileHtml,['<br><br> Графики \n']);
  fprintf(FileHtml,['<a href="' FileName000 '">']);
  fprintf(FileHtml,['<br><img src="'...
  FileName000 '" height="' PictHigh1 '" >' '\n']);
  %fprintf(FileHtml,['<a href="' FileName000 '">']);
  fprintf(FileHtml,['</a>\n']);
-  fprintf(FileHtml,['<h3>Çàìå÷àíèå:</h3>\n']);
- fprintf(FileHtml,['<h3>Ìèíèàòþðíàÿ êîïèÿ ãðàôèêà ÿâëÿåòñÿ ññûëêîé íà îêíî, â êîòîðîé ãðàôèê îòîáðàæàåòñÿ â ìàñøòàáå 1:1.</h3>\n']);
+  fprintf(FileHtml,['<h3>Замечание:</h3>\n']);
+ fprintf(FileHtml,['<h3>Миниатюрная копия графика является ссылкой на окно, в которой график отображается в масштабе 1:1.</h3>\n']);
  
  fprintf(FileHtml,['</body>\n']);
  fprintf(FileHtml,['</HTML>\n']);
  fclose(FileHtml);
-disp('Âû÷èñëåíèÿ çàâåðøåíû');
-toc %âûâåñòè ïîêàçàíèÿ òàéìåðà
+disp('Вычисления завершены');
+toc 
 end
 
 
