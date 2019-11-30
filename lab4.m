@@ -196,12 +196,12 @@ clc
 tic 
 File1NameExp='v01';
 PictHigh1='200'; 
-DirName1=['C:\Users\User\Desktop\Лабы и расчеты\'File1NameExp];
+DirName1=['C:\Users\User\Desktop\Лабы и расчеты\' File1NameExp];
  if ~exist(DirName1)
  mkdir(DirName1);
 end;
 cd(DirName1);
- FileHtml=fopen(['00' File1NameExp 'lab3_15(5).htm'],'wt');
+ FileHtml=fopen([' 00' File1NameExp 'lab3_15(5).htm'],'wt');
  fprintf(FileHtml,['<HTML>\n']);
  fprintf(FileHtml,['<head>\n']);
  fprintf(FileHtml,['C:\Users\User\Desktop\Лабы и расчеты\']);
