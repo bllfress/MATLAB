@@ -17,23 +17,32 @@ x=[0];
 y=[0];
 x1=[0];
 y1=[0];
+X12=[0];
+Y12=[0];
+
 n=0;
 r=0;
+
 hold off
 for m=-10:0.1:10
 if (m<=0)
 n=n+1;
+
 x(n)=m;
 y(n)=(1+x(n)^2/(1+x(n)^2))^1/2;
+
 end;
 if(m>0)
 r=r+1;
 x1(r)=m;
 y1(r)=2*abs(cos(x(r)));
-
 end;
 end
-plot(x,y,'r--');
+X12=[x,x1];
+Y12=[y,y1];
+plot(X12,Y12,'m*-');
+hold on
+plot(x,y,'r+-');
 hold on
 plot(x1,y1,'m*-');
 legend('y','y1');
@@ -43,9 +52,8 @@ xlim([-10 10]);
 
 
 
-
+ 
+ 
 hold off
-ezplot('(1+(x^2)/(1+x^2))^1/2',[-10 0]);
-hold on
-ezplot('2*abs(cos(x))',[0 10]);
-xlim([-10 10]);
+plot(X12,Y12,'-');
+  xlim([-10 10]);
