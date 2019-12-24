@@ -1,4 +1,4 @@
-%П1 СИНТЕЗИРУЕМ ИЗОБРАЖЕНИЕ
+%Рџ1 РЎРРќРўР•Р—РР РЈР•Рњ РР—РћР‘Р РђР–Р•РќРР•
 m=0;
 
 for s = 1.0:1:800.0
@@ -12,25 +12,25 @@ m=m+1;
 end
 m=image( X1 );
 colormap( gray );
-% конец П1 СИНТЕЗИРУЕМ ИЗОБРАЖЕНИЕ
+% РєРѕРЅРµС† Рџ1 РЎРРќРўР•Р—РР РЈР•Рњ РР—РћР‘Р РђР–Р•РќРР•
 
-% П2 НАКЛАДЫВАЕМ ШУМ
+% Рџ2 РќРђРљР›РђР”Р«Р’РђР•Рњ РЁРЈРњ
  R = imnoise2('exponential', 800, 800);
  Noize=double(X1).*R
  N=image( Noize );
 colormap( gray );
  
-%КОНЕЦ П2 
-% П3 гистограмма изображения
+%РљРћРќР•Р¦ Рџ2 
+% Рџ3 РіРёСЃС‚РѕРіСЂР°РјРјР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 U=figure; 
 hist(Noize);
 colormap( gray );
 print(U,'-dpng','lab5')
- % конец П3 
+ % РєРѕРЅРµС† Рџ3 
  
  
 
-% П4 Сентез объекта 1
+% Рџ4 РЎРµРЅС‚РµР· РѕР±СЉРµРєС‚Р° 1
 Ob1=figure; 
 m=0;
 
@@ -77,10 +77,10 @@ for A = 0.0:1:200.0
 m=image( X2 );
 colormap( gray );
 print(Ob1,'-dpng','lab5p4')
- % конец П4 
+ % РєРѕРЅРµС† Рџ4  
  
  
- %уменьшение в 2 раза П5
+%СѓРјРµРЅСЊС€РµРЅРёРµ РІ 2 СЂР°Р·Р° Рџ5
   Ob2=figure; 
   B = imresize(X2,1/2,'nearest');
   m1=image( B );
@@ -93,12 +93,12 @@ print(Ob1,'-dpng','lab5p4')
   m2=image( B1 );
   colormap( gray );
   print(Ob3,'-dpng','lab5p5.2')
-  % конец П5
+ % РєРѕРЅРµС† Рџ5
   
-  % синтез н. изобр. с шумом П6
+   % СЃРёРЅС‚РµР· РЅ. РёР·РѕР±СЂ. СЃ С€СѓРјРѕРј Рџ6
   ob4=figure;
   m=0;
-%фигура 1
+%С„РёРіСѓСЂР° 1
 for s = 1.0:1:800.0
    for R = 1.0:1:800.0
    X3(s,R)=uint8(m);
@@ -144,7 +144,7 @@ for A = 0.0:1:800.0
    end
    end
 end
-%фигура 2(шестиугольник)
+%С„РёРіСѓСЂР° 2(С€РµСЃС‚РёСѓРіРѕР»СЊРЅРёРє)
 for A = 1.0:1:800.0
    for B = 1.0:1:800.0
   
@@ -161,7 +161,7 @@ for A = 0.0:1:800.0
    end
    end
 end
-%третья фигура
+%С‚СЂРµС‚СЊСЏ С„РёРіСѓСЂР°
 for A = 1.0:1:800.0
    for B = 1.0:1:800.0
   
@@ -174,9 +174,9 @@ for A = 1.0:1:800.0
   N=image( Noize );
   colormap( gray );
  
- %конец  П6
+ %РєРѕРЅРµС†  Рџ6
   
-%Пункт 7  
+%РџСѓРЅРєС‚ 7  
  ob5=figure;
   m=401.0;
   Perem=0;
@@ -195,10 +195,10 @@ for A = 401.0:1:800.0
   N=image( Noize );
   colormap( gray );
   print(ob5,'-dpng','lab5p7')
- %Пункт 7 Конец  
+  %РџСѓРЅРєС‚ 7 РљРѕРЅРµС†   
  
  
- %Пункт 8  
+ %РџСѓРЅРєС‚ 8  
  ob6=figure;
   m=401.0;
   Perem=0;
@@ -216,31 +216,33 @@ for A = 401.0:1:800.0
   N=image( Noize1 );
   colormap( gray );
   print(ob6,'-dpng','lab5p8')
- %Пункт 8 Конец  
+  %РџСѓРЅРєС‚ 8 РљРѕРЅРµС†  
+ 
 
- % Пункт 9
+ % РџСѓРЅРєС‚ 9
  ob7=figure;
 J = imrotate(Noize2,-45)
  N=image( J );
   colormap( gray );
   print(ob7,'-dpng','lab5p9')
-% Пункт 9 конец
+% РџСѓРЅРєС‚ 9 РєРѕРЅРµС†
  
-  % Пункт 10
+   % РџСѓРЅРєС‚ 10
  ob8=figure;
 J = imrotate(Noize2,45)
  N=image( J );
   colormap( gray );
   print(ob8,'-dpng','lab5p10')
-% Пункт 10 конец
+% РџСѓРЅРєС‚ 10 РєРѕРЅРµС†
  
-  % Пункт 11
+ 
+ % РџСѓРЅРєС‚ 11
    ob9=figure;
   Background=imread('DIO.png');
     N=image( Background );
      
-  %Конец 11
-   % Пункт 12
+ %РљРѕРЅРµС† 11
+   % РџСѓРЅРєС‚ 12
    ob10=figure;
    b1=500;
  
@@ -254,9 +256,9 @@ J = imrotate(Noize2,45)
    
     N=image( Background1 );
      colormap( gray );
-  %Конец 12
+ %РљРѕРЅРµС† 12
   
-   % Пункт 13
+   % РџСѓРЅРєС‚ 13
    ob11=figure;
 
  
@@ -268,11 +270,11 @@ J = imrotate(Noize2,45)
     N=image( Background1 );
      Background2=Background1;
      colormap( gray );
-  %Конец 13
+  %РљРѕРЅРµС† 13
   
-  %Пункт 14
+  %РџСѓРЅРєС‚ 14
   ob12=figure; 
-    %Обьект 1
+   %РћР±СЊРµРєС‚ 1
   for A = 1.0:1:800.0
     for B = 1.0:1:800.0
    
@@ -283,7 +285,7 @@ J = imrotate(Noize2,45)
   end 
   
     
- %Обьект 2
+ %РћР±СЊРµРєС‚ 2
  for A = 1.0:1:800.0
     for B = 1.0:1:800.0
    
@@ -312,17 +314,18 @@ J = imrotate(Noize2,45)
   N=image( Background1 );
  colormap( gray );
   print(ob11,'-dpng','lab5p14')
-  %конец 14
+  %РєРѕРЅРµС† 14
   
-  %Пункт 15
+  %РџСѓРЅРєС‚ 15
+   
    
   ob13=figure; 
  Background11=imcomplement(Background1); 
 imshow(Background11);
-  %конец 15
- %16 п
+  %РєРѕРЅРµС† 15
+ %16 Рї
  ob14=figure; 
-    %Обьект 1
+    %РћР±СЊРµРєС‚ 1
   for A = 1.0:1:800.0
     for B = 1.0:1:800.0
    
@@ -339,10 +342,10 @@ imshow(Background11);
   N=image( Background2 );
  colormap( gray );
   print(ob14,'-dpng','lab5p16') 
- %конец 16 
+ %РєРѕРЅРµС† 16 
   
 
-  %Пункт 17
+  %РџСѓРЅРєС‚ 17
    ob15=figure; 
    Z=imsubtract(Background1,Background2)
   
@@ -350,7 +353,7 @@ imshow(Background11);
   N=image( Z );
  colormap( gray );
   print(ob15,'-dpng','lab5p17') 
-  %17 конец
+  %17 РєРѕРЅРµС†
   
   
   
